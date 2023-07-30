@@ -1,15 +1,8 @@
 import React from "react";
+import Todo from "./ToDo";
 
-const ToDoList = (props) => {
-  return (
-    <div>
-      <ul>
-        {props.todoItems.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    </div>
-  );
+const ToDoList = ({ todoItems }) => {
+  return todoItems.map((todo) => <Todo inputTxt={todo.name} key={todo.name} />);
 };
 
 export default ToDoList;
