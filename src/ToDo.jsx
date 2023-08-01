@@ -1,11 +1,20 @@
 import React from "react";
 
-const ToDo = ({ inputTxt }) => {
+const ToDo = ({ todo, toggleTodo }) => {
+  const handleTodoClick = () => {
+    toggleTodo(todo.id);
+  };
   return (
     <div>
-      <input value={inputTxt} readOnly></input>
-      <button>タスク完了</button>
-      <button>タスクを削除</button>
+      <label>
+        <input
+          type="checkbox"
+          checked={todo.completed}
+          readOnly
+          onChange={handleTodoClick}
+        />
+        {todo.name}
+      </label>
     </div>
   );
 };

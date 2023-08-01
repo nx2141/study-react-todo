@@ -1,8 +1,10 @@
 import React from "react";
 import Todo from "./ToDo";
 
-const ToDoList = ({ todoItems }) => {
-  return todoItems.map((todo) => <Todo inputTxt={todo.name} key={todo.name} />);
+const ToDoList = ({ todos, toggleTodo }) => {
+  return todos.map((todo) => (
+    <Todo todo={todo} key={todo.id} toggleTodo={toggleTodo} />
+  ));
 };
 
 export default ToDoList;
